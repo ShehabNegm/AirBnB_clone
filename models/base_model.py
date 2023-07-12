@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # base_model.py
-"""define the base_model class"""
+"""defines the base_model class"""
 from datetime import datetime
 import uuid
 
