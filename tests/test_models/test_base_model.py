@@ -5,6 +5,7 @@ import unittest
 from datetime import datetime
 from models.base_model import BaseModel
 
+
 class TestBaseModel(unittest.TestCase):
     def setUp(self):
         self.base_model = BaseModel()
@@ -34,7 +35,9 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(dic_object['id'], self.base_model.id)
         self.assertEqual(dic_object['updated_at'], self.base_model.updated_at)
         self.assertEqual(dic_object['created_at'], self.base_model.created_at)
-        self.assertEqual(dic_object['__class__'], self.base_model.__class__.__name__)
+        self.assertEqual(dic_object['__class__'],
+                         self.base_model.__class__.__name__)
+
 
 if __name__ == '__main__':
     unittest.main()
