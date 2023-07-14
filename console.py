@@ -8,7 +8,7 @@ from models.base_model import BaseModel
 class HBNBCommand(cmd.Cmd):
     """HBNBCommand class"""
     prompt = "(hbnb) "
-    classes = ["BaseModel"]
+    classes = ["BaseModel", "User"]
 
     def do_quit(self, arg):
         """Quit command to exit the console"""
