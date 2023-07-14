@@ -88,7 +88,7 @@ class HBNBCommand(cmd.Cmd):
             for value in storage.all().values():
                 instances.append(str(value))
             print(instances)
-        
+
         elif args[0] in self.classes:
             class_name = args[0]
             for key, value in storage.all().items():
@@ -118,13 +118,12 @@ class HBNBCommand(cmd.Cmd):
         else:
             key = args[0] + "." + args[1]
             instance = storage.all()[key]
+            cast = type(eval(args[3]))
             arg3 = args[3]
-            arg3 = arg3.replace('"', " ")
-            arg3 = arg3.replace("'", " ")
-            arg3 = arg3.strip()
-            cast = type(eval(arg3))
+            arg3 = arg3.strip('"')
+            arg3 = arg3.strip("'")
             value = cast(arg3)
-            setattr(instance, args[2], cast(value))
+            setattr(instance, args[2], value)
             storage.save()
 
 
