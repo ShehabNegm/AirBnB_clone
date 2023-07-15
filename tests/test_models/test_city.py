@@ -2,7 +2,7 @@
 # test_city.py
 """unittesting for BaseModel subclass City"""
 import unittest
-from models.City import City
+from models.city import City
 from models.base_model import BaseModel
 from datetime import datetime
 
@@ -34,15 +34,21 @@ class TestCity(unittest.TestCase):
     def test_city_to_dict(self):
         city_dict = self.city.to_dict()
         self.assertIsInstance(city_dict, dict)
-        self.asertIsInstance(city_dict['created_at'], str)
+        self.assertIsInstance(city_dict['created_at'], str)
         self.assertIsInstance(city_dict['updated_at'], str)
         self.assertIsInstance(city_dict['id'], str)
-        self.assertEqual(city_dict['__class__'], 'State')
+        self.assertEqual(city_dict['__class__'], 'City')
 
     def test_city_to_dict_keys(self):
         keys = ['id', 'updated_at', 'created_at', '__class__']
         dic_object = self.city.to_dict()
         self.assertCountEqual(keys, dic_object.keys())
+
+    def test_city_name(self):
+        state_id = "789"
+        self.city.state_id = state_id
+        self.assertEqual(self.city.state_id, "789")
+        self.assertIsInstance(self.city.state_id, str)
 
     def test_city_name(self):
         name = "Cali"

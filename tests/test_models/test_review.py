@@ -11,7 +11,7 @@ class TestState(unittest.TestCase):
     """Test class for State subclass"""
 
     def setUp(self):
-        self.review = Reviw()
+        self.review = Review()
 
     def test_review_is_BaseModel_subclass(self):
         self.assertIsInstance(Review(), BaseModel)
@@ -34,7 +34,7 @@ class TestState(unittest.TestCase):
     def test_review_to_dict(self):
         review_dict = self.review.to_dict()
         self.assertIsInstance(review_dict, dict)
-        self.asertIsInstance(review_dict['created_at'], str)
+        self.assertIsInstance(review_dict['created_at'], str)
         self.assertIsInstance(review_dict['updated_at'], str)
         self.assertIsInstance(review_dict['id'], str)
         self.assertEqual(review_dict['__class__'], 'Review')
@@ -44,8 +44,16 @@ class TestState(unittest.TestCase):
         dic_object = self.review.to_dict()
         self.assertCountEqual(keys, dic_object.keys())
 
-    def test_review_name(self):
-        name = "Cali"
-        self.review.name = name
-        self.assertEqual(self.review.name, "Cali")
-        self.assertIsInstance(self.review.name, str)
+    def test_review_instance_with_attributes(self):
+        review = Review(place_id="123", user_id="7977506", text="Shithole")
+        self.assertEqual(review.place_id, "123")
+        self.assertEqual(review.user_id, "7977506")
+        self.assertEqual(review.text, "Shithole")
+    
+    def test_review_text(self):
+        text = "This is the text"
+        self.review.text = text
+        self.assertEqual(self.review.text, "This is the text")
+        self.assertIsInstance(self.review.text, str)
+
+

@@ -34,7 +34,7 @@ class TestAmenity(unittest.TestCase):
     def test_amenity_to_dict(self):
         amenity_dict = self.amenity.to_dict()
         self.assertIsInstance(amenity_dict, dict)
-        self.asertIsInstance(amenity_dict['created_at'], str)
+        self.assertIsInstance(amenity_dict['created_at'], str)
         self.assertIsInstance(amenity_dict['updated_at'], str)
         self.assertIsInstance(amenity_dict['id'], str)
         self.assertEqual(amenity_dict['__class__'], 'Amenity')
@@ -45,7 +45,7 @@ class TestAmenity(unittest.TestCase):
         self.assertCountEqual(keys, dic_object.keys())
 
     def test_amenity_name(self):
-        name = "Cali"
+        name = "Swimming Pools"
         self.amenity.name = name
-        self.assertEqual(self.amenity.name, "Cali")
+        self.assertEqual(self.amenity.name, "Swimming Pools")
         self.assertIsInstance(self.amenity.name, str)
