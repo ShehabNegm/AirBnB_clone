@@ -44,6 +44,6 @@ class FileStorage:
             with open(filename, 'r') as f:
                 r_dict = json.load(f)
                 for v in r_dict.values():
-                    class_name = v["_class__"]
+                    class_name = v["__class__"]
                     del v["__class__"]
                     self.new(eval(class_name)(**v))
