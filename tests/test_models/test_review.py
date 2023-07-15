@@ -55,3 +55,7 @@ class TestState(unittest.TestCase):
         self.review.text = text
         self.assertEqual(self.review.text, "This is the text")
         self.assertIsInstance(self.review.text, str)
+
+
+if __name__ == '__main__':
+    unittest.main()

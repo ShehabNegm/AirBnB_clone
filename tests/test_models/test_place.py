@@ -109,3 +109,7 @@ class TestPlace(unittest.TestCase):
         self.place.amenity_ids = amenity_ids
         self.assertEqual(self.place.amenity_ids, [45, 105, 67])
         self.assertIsInstance(self.place.amenity_ids, list)
+
+
+if __name__ == '__main__':
+    unittest.main()

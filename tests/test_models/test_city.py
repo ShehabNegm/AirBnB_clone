@@ -55,3 +55,7 @@ class TestCity(unittest.TestCase):
         self.city.name = name
         self.assertEqual(self.city.name, "Cali")
         self.assertIsInstance(self.city.name, str)
+
+
+if __name__ == '__main__':
+    unittest.main()

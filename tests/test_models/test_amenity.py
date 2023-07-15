@@ -49,3 +49,7 @@ class TestAmenity(unittest.TestCase):
         self.amenity.name = name
         self.assertEqual(self.amenity.name, "Swimming Pools")
         self.assertIsInstance(self.amenity.name, str)
+
+
+if __name__ == '__main__':
+    unittest.main()

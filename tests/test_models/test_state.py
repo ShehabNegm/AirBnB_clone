@@ -49,3 +49,7 @@ class TestState(unittest.TestCase):
         self.state.name = name
         self.assertEqual(self.state.name, "Cali")
         self.assertIsInstance(self.state.name, str)
+
+
+if __name__ == '__main__':
+    unittest.main()
