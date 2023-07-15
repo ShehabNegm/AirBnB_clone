@@ -14,7 +14,7 @@ class TestAmenity(unittest.TestCase):
         self.amenity = Amenity()
 
     def test_amenity_is_BaseModel_subclass(self):
-        self.assertIsInstance(Amenity(), BaseModel)
+        self.assertIsInstance(self.amenity, BaseModel)
 
     def test_amenity_created_at(self):
         self.assertIsInstance(self.amenity.created_at, datetime)
