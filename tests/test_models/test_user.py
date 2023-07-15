@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # test_user.py
-"""unittesting for subclass Uase of BaseModel"""
+"""unittesting for subclass User of BaseModel"""
 import unittest
 from datetime import datetime
 from models.user import User

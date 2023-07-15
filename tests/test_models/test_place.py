@@ -7,7 +7,7 @@ from models.base_model import BaseModel
 from datetime import datetime
 
 
-class TestPlace(unitest.TestCase):
+class TestPlace(unittest.TestCase):
     """Test class for Place subclass"""
 
     def setUp(self):
