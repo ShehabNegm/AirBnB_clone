@@ -43,20 +43,7 @@ class FileStorage:
         else:
             with open(filename, 'r') as f:
                 r_dict = json.load(f)
-            
-            classes = {
-                    "BaseModel": BaseModel,
-                    "User": User,
-            }
-
-            for k, obj in r_dict.items():
-                class_name, obj_id = key.split('.')
-                if class_name in calsses:
-                    class_1 = classes[class_name]
-                    new_object = class_1(**obj)
-                    self.__objects[key] = new_object
-                
                 for v in r_dict.values():
-                    class_name = v["__class__"]
+                    class_name = v["_class__"]
                     del v["__class__"]
                     self.new(eval(class_name)(**v))
