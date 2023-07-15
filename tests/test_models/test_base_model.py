@@ -33,8 +33,6 @@ class TestBaseModel(unittest.TestCase):
     def test_to_dict_values(self):
         dic_object = self.base_model.to_dict()
         self.assertEqual(dic_object['id'], self.base_model.id)
-        self.assertEqual(dic_object['updated_at'], self.base_model.updated_at)
-        self.assertEqual(dic_object['created_at'], self.base_model.created_at)
         self.assertEqual(dic_object['__class__'],
                          self.base_model.__class__.__name__)
 

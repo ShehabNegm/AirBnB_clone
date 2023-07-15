@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 # test_user.py
 """unittesting for subclass Uase of BaseModel"""
+import unittest
+from datetime import datetime
 from models.user import User
 from models.base_model import BaseModel
 
@@ -24,8 +26,8 @@ class testUser(unittest.TestCase):
         self.assertIsInstance(self.user.id, str)
 
     def test_user_id_2(self):
-        id = user.id
-        self.assertEqual(id, user.id)
+        id = self.user.id
+        self.assertEqual(id, self.user.id)
 
     def test_user_save_update(self):
         update1 = self.user.updated_at
@@ -39,36 +41,36 @@ class testUser(unittest.TestCase):
         self.assertCountEqual(keys, dic_object.keys())
 
     def test_user_to_dict_values(self):
-        dic_object = self.base_model.to_dict()
+        dic_object = self.user.to_dict()
         my_new_model = User(**dic_object)
         self.assertIsInstance(my_new_model.id, str)
-        self.assertEqual(my_new_model.id, self.base_model.id)
+        self.assertEqual(my_new_model.id, self.user.id)
         self.assertIsInstance(my_new_model.created_at, datetime)
         self.assertIsInstance(my_new_model.updated_at, datetime)
 
     def test_user_email(self):
         email = "test@test.com"
-        user.email = email
-        self.assertIsInstance(user.email, str)
-        self.asserIsEqual(user.email, "test@test.com")
+        self.user.email = email
+        self.assertIsInstance(self.user.email, str)
+        self.assertEqual(self.user.email, "test@test.com")
 
     def test_user_passwrod(self):
         password = "12345"
-        user.password = password
-        self.assertIsInstance(user.password, str)
-        self.assertIsEqual(user.password, "12345")
+        self.user.password = password
+        self.assertIsInstance(self.user.password, str)
+        self.assertEqual(self.user.password, "12345")
 
     def test_user_first_name(self):
         first_name = "lol"
-        user.first_name = first_name
-        self.assertIsInstance(user.first_name, str)
-        self.assertIsEqual(user.first_name, "lol")
+        self.user.first_name = first_name
+        self.assertIsInstance(self.user.first_name, str)
+        self.assertEqual(self.user.first_name, "lol")
 
     def test_user_last_name(self):
         last_name = "nah"
-        user.last_name = last_name
-        self.assertIsInstance(user.last_name, str)
-        self.assertIsEqual(user.last_name, "nah")
+        self.user.last_name = last_name
+        self.assertIsInstance(self.user.last_name, str)
+        self.assertEqual(self.user.last_name, "nah")
 
 
 if __name__ == '__main__':
