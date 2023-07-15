@@ -49,11 +49,9 @@ class TestState(unittest.TestCase):
         self.assertEqual(review.place_id, "123")
         self.assertEqual(review.user_id, "7977506")
         self.assertEqual(review.text, "Shithole")
-    
+
     def test_review_text(self):
         text = "This is the text"
         self.review.text = text
         self.assertEqual(self.review.text, "This is the text")
         self.assertIsInstance(self.review.text, str)
-
-

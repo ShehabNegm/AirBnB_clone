@@ -101,7 +101,7 @@ class TestPlace(unittest.TestCase):
     def test_place_latitude(self):
         latitude = 22.66
         self.place.latitude = latitude
-        self.assertEqual(self.place.latitude,22.66)
+        self.assertEqual(self.place.latitude, 22.66)
         self.assertIsInstance(self.place.latitude, float)
 
     def test_place_amenity_ids(self):
