@@ -39,9 +39,9 @@ class TestState(unitest.TestCase):
         self.assertIsInstance(state_dict['id'], str)
         self.assertEqual(state_dict['__class__'], 'State')
 
-    def test_user_to_dict_keys(self):
+    def test_state_to_dict_keys(self):
         keys = ['id', 'updated_at', 'created_at', '__class__']
-        dic_object = self.user.to_dict()
+        dic_object = self.state.to_dict()
         self.assertCountEqual(keys, dic_object.keys())
 
     def test_state_name(self):

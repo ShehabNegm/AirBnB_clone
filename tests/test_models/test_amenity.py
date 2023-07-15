@@ -1,51 +1,51 @@
 #!/usr/bin/python3
-# test_state.py
-"""unittesting for BaseModel subclass State"""
+# test_amenity.py
+"""unittesting for BaseModel subclass Amenity"""
 import unittest
-from models.state import State
+from models.amenity import Amenity
 from models.base_model import BaseModel
 from datetime import datetime
 
 
-class TestState(unitest.TestCase):
-    """Test class for State subclass"""
+class TestAmenity(unitest.TestCase):
+    """Test class for Amenity subclass"""
 
     def setUp(self):
-        self.state = State()
+        self.amenity = Amenity()
 
-    def test_state_is_BaseModel_subclass(self):
-        self.assertIsInstance(State(), BaseModel)
+    def test_amenity_is_BaseModel_subclass(self):
+        self.assertIsInstance(Amenity(), BaseModel)
 
-    def test_state_created_at(self):
-        self.assertIsInstance(self.state.created_at, datetime)
+    def test_amenity_created_at(self):
+        self.assertIsInstance(self.amenity.created_at, datetime)
 
-    def test_state_updated_at(self):
-        self.assertIsInstance(self.state.updated_at, datetime)
+    def test_amenity_updated_at(self):
+        self.assertIsInstance(self.amenity.updated_at, datetime)
 
-    def test_state_id(self):
-        self.assertIsInstance(self.state.id, str)
-        self.assertNotEqual(self.state.id, "")
+    def test_amenity_id(self):
+        self.assertIsInstance(self.amenity.id, str)
+        self.assertNotEqual(self.amenity.id, "")
 
-    def test_state_save(self):
-        old_updated_at = self.state.updated_at
-        self.state.save()
-        self.assertNotEqual(old_updated_at, self.state.updated_at)
+    def test_amenity_save(self):
+        old_updated_at = self.amenity.updated_at
+        self.amenity.save()
+        self.assertNotEqual(old_updated_at, self.amenity.updated_at)
 
-    def test_state_to_dict(self):
-        state_dict = self.state.to_dict()
-        self.assertIsInstance(state_dict, dict)
-        self.asertIsInstance(state_dict['created_at'], str)
-        self.assertIsInstance(state_dict['updated_at'], str)
-        self.assertIsInstance(state_dict['id'], str)
-        self.assertEqual(state_dict['__class__'], 'State')
+    def test_amenity_to_dict(self):
+        amenity_dict = self.amenity.to_dict()
+        self.assertIsInstance(amenity_dict, dict)
+        self.asertIsInstance(amenity_dict['created_at'], str)
+        self.assertIsInstance(amenity_dict['updated_at'], str)
+        self.assertIsInstance(amenity_dict['id'], str)
+        self.assertEqual(amenity_dict['__class__'], 'Amenity')
 
-    def test_user_to_dict_keys(self):
+    def test_amenity_to_dict_keys(self):
         keys = ['id', 'updated_at', 'created_at', '__class__']
-        dic_object = self.user.to_dict()
+        dic_object = self.amenity.to_dict()
         self.assertCountEqual(keys, dic_object.keys())
 
-    def test_state_name(self):
+    def test_amenity_name(self):
         name = "Cali"
-        self.state.name = name
-        self.assertEqual(self.state.name, "Cali")
-        self.assertIsInstance(self.state.name, str)
+        self.amenity.name = name
+        self.assertEqual(self.amenity.name, "Cali")
+        self.assertIsInstance(self.amenity.name, str)
