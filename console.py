@@ -141,7 +141,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         class_name = args[0]
-        if class_name not in slef.classes:
+        if class_name not in self.classes:
             print("** class doesn't exist **")
             return
 
