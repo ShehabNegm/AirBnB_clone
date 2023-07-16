@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# test_user.py
 """unittesting for subclass User of BaseModel"""
 import unittest
 from datetime import datetime
@@ -8,7 +7,7 @@ from models.base_model import BaseModel
 
 
 class testUser(unittest.TestCase):
-    """class to test unsing unittesting modeule"""
+    """unittest for User class of BaseModel"""
 
     def setUp(self):
         self.user = User()
@@ -73,5 +72,5 @@ class testUser(unittest.TestCase):
         self.assertEqual(self.user.last_name, "nah")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
