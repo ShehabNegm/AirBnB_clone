@@ -9,7 +9,8 @@ from models.user import User
 class HBNBCommand(cmd.Cmd):
     """HBNBCommand class"""
     prompt = "(hbnb) "
-    classes = ["BaseModel", "User"]
+    classes = ["BaseModel", "User", "State", "City", "Amenity", "Place",
+               "Review"]
 
     def do_quit(self, arg):
         """Quit command to exit the console"""
