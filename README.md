@@ -33,7 +33,7 @@ $
 |`create` |`create <class>`                    | create new object and print id|
 |`all`    |`all`                               | will print all objects        |
 |`show`   |`show <class>`                      | print obj of the class        |
-|`destroy`|`destroy <class> <id>               | delete obj by its id          |
+|`destroy`|`destroy <class> <id>`              | delete obj by its id          |
 |`count`  |`class.count`                       | count objects of the class    |
 |`update` |`update <class> <id> <arg> <value>` | update class arrtibutes       |
 
