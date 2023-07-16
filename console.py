@@ -141,14 +141,15 @@ class HBNBCommand(cmd.Cmd):
             return
 
         class_name = args[0]
+
         if class_name not in self.classes:
             print("** class doesn't exist **")
             return
 
         count = 0
 
-        for key in storage.all().items():
-            if class_name in key:
+        for object_1 in storage.all().values():
+            if object_1.__class__.__name__ == class_name:
                 count += 1
 
         print(count)
