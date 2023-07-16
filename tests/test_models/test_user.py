@@ -71,7 +71,3 @@ class TestUser(unittest.TestCase):
         self.user.last_name = last_name
         self.assertIsInstance(self.user.last_name, str)
         self.assertEqual(self.user.last_name, "nah")
-
-
-if __name__ == "__main__":
-    unittest.main()
