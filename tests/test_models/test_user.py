@@ -11,6 +11,7 @@ class TestUser(unittest.TestCase):
     """unittest for User class of BaseModel"""
 
     def setUp(self):
+        """setup method"""
         self.user = User()
 
     def test_user_BaseModel(self):
@@ -71,3 +72,7 @@ class TestUser(unittest.TestCase):
         self.user.last_name = last_name
         self.assertIsInstance(self.user.last_name, str)
         self.assertEqual(self.user.last_name, "nah")
+
+
+if __name__ == '__main__':
+    unittest.main()

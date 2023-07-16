@@ -40,3 +40,7 @@ class TestFileStorage(unittest.TestCase):
         rr_dict = r_storage.all()
         key = r_user.__class__.__name__ + "." + str(r_user.id)
         self.assertIsNotNone(rr_dict[key])
+
+
+if __name__ == '__main__':
+    unittest.main()
