@@ -38,8 +38,8 @@ $
 |`update` |`update <class> <id> <arg> <value>` | update class arrtibutes       |
 
 ### Authors
-[Amina Mohamed](https://github.com/Amina9898)
-[Shehab Negm](https://github.com/ShehabNegm)
+*[Amina Mohamed](https://github.com/Amina9898)
+*[Shehab Negm](https://github.com/ShehabNegm)
 
 
 
