@@ -20,7 +20,7 @@ class FileStorage:
 
     def all(self):
         """returns the dictionary __objects"""
-        return self.__objects
+        return FileStorage.__objects
 
     def new(self, obj):
         """sets in __objects the obj with key <obj class name>.id"""
@@ -32,8 +32,8 @@ class FileStorage:
         """serializes __objects to the JSON file (path: __file_path)"""
 
         dict_1 = {}
-        for k in self.__objects.keys():
-            dict_1[k] = self.__objects[k].to_dict()
+        for k in FileStorage.__objects.keys():
+            dict_1[k] = FileStorage.__objects[k].to_dict()
         filename = self.__file_path
         with open(filename, 'w') as f:
             json.dump(dict_1, f)
