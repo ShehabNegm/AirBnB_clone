@@ -133,6 +133,26 @@ class HBNBCommand(cmd.Cmd):
             setattr(instance, args[2], value)
             storage.save()
 
+    def do_count(self, arg):
+        """Retrieves the number of instances of a class"""
+        args = arg.split()
+        if not args:
+            print("** class name missing **")
+            return
+
+        class_name = args[0]
+        if class_name not in slef.classes:
+            print("** class doesn't exist **")
+            return
+
+        count = 0
+
+        for key in storage.all().items():
+            if class_name in key:
+                count += 1
+
+        print(count)
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
