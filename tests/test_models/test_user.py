@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """unittesting for subclass User of BaseModel"""
+
 import unittest
 from datetime import datetime
 from models.user import User
 from models.base_model import BaseModel
 
 
-class testUser(unittest.TestCase):
+class TestUser(unittest.TestCase):
     """unittest for User class of BaseModel"""
 
     def setUp(self):
