@@ -7,8 +7,8 @@ from models.base_model import BaseModel
 from datetime import datetime
 
 
-class TestState(unittest.TestCase):
-    """Test class for State subclass"""
+class TestReview(unittest.TestCase):
+    """Test class for review subclass"""
 
     def setUp(self):
         self.review = Review()
