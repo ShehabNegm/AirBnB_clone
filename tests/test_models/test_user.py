@@ -5,18 +5,28 @@ import unittest
 from datetime import datetime
 from models.user import User
 from models.base_model import BaseModel
+import os
 
 
 class TestUser(unittest.TestCase):
     """unittest for User class of BaseModel"""
 
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         """setup method"""
-        self.user = User()
-        self.user.first_name = "shehab"
-        self.user.last_name = "negm"
-        self.user.email = "test@test.com"
-        self.user.password = "123"
+        cls.user = User()
+        cls.user.first_name = "shehab"
+        cls.user.last_name = "negm"
+        cls.user.email = "test@test.com"
+        cls.user.password = "123"
+
+    @classmethod
+    def tearDownClass(cls):
+        del cls.user
+        try:
+            os.remove("file.json")
+        except FileNotFoundError:
+            pass
 
     def test_isinstance(self):
         self.assertIsInstance(User(), BaseModel)
