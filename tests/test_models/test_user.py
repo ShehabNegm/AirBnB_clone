@@ -13,8 +13,12 @@ class TestUser(unittest.TestCase):
     def setUp(self):
         """setup method"""
         self.user = User()
+        self.user.first_name = "shehab"
+        self.user.last_name = "negm"
+        self.user.email = "test@test.com"
+        self.user.password = "123"
 
-    def test_user_BaseModel(self):
+    def test_user_isinstance(self):
         self.assertIsInstance(User(), BaseModel)
 
     def test_user_created_at(self):
@@ -37,7 +41,8 @@ class TestUser(unittest.TestCase):
         self.assertNotEqual(update1, update2)
 
     def test_user_to_dict_keys(self):
-        keys = ['id', 'updated_at', 'created_at', '__class__']
+        keys = ['id', 'updated_at', 'created_at', '__class__', 'first_name',
+                'last_name', 'email', 'password']
         dic_object = self.user.to_dict()
         self.assertCountEqual(keys, dic_object.keys())
 
