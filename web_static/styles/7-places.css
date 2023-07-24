@@ -15,7 +15,8 @@
 	text-align: center;
 }
 
-.places sub{
+.places .sub{
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 }
